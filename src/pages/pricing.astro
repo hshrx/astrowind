@@ -1,244 +1,317 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Prices from '~/components/widgets/Pricing.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-
-const metadata = {
-  title: 'Pricing',
-};
+import { useEffect } from "astro/jsx-runtime";
 ---
 
-<Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11s.in - Live Sports</title>
 
-  <HeroText
-    tagline="Pricing"
-    title="Stellar Pricing for Every Journey"
-    subtitle="Choose the perfect plan that aligns with your cosmic goals."
-  />
+    <!-- Meta Tags for SEO -->
+    <meta
+      name="description"
+      content="Watch live sports on 11s.in. Join our WhatsApp group for the latest updates and never miss a game!"
+    />
+    <meta
+      name="keywords"
+      content="live sports, sports streaming, 11s.in, watch sports online, live sports updates"
+    />
+    <meta name="author" content="HM Network" />
 
-  <!-- Pricing Widget ******************* -->
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="11s.in - Live Sports" />
+    <meta
+      property="og:description"
+      content="Watch live sports on 11s.in. Join our WhatsApp group for the latest updates and never miss a game!"
+    />
+    <meta
+      property="og:image"
+      content="https://assets.k.om/news/uploads/2024/09/1.jpg"
+    />
+    <meta property="og:url" content="https://11s.in" />
+    <meta property="og:type" content="website" />
 
-  <Prices
-    title="Our prices"
-    subtitle="Only pay for what you need"
-    prices={[
-      {
-        title: 'basic',
-        subtitle: 'Optimal choice for personal use',
-        price: 29,
-        period: 'per month',
-        items: [
-          {
-            description: 'Etiam in libero, et volutpat',
-          },
-          {
-            description: 'Aenean ac nunc dolor tristique',
-          },
-          {
-            description: 'Cras scelerisque accumsan lib',
-          },
-          {
-            description: 'In hac habitasse',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="11s.in - Live Sports" />
+    <meta
+      name="twitter:description"
+      content="Watch live sports on 11s.in. Join our WhatsApp group for the latest updates and never miss a game!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://assets.khelnow.com/news/uploads/2024/09/1.jpg"
+    />
+
+    <!-- External Stylesheets and Scripts -->
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" src="//assignmentlonesome.com/4d/64/62/4d6462d4886122448a7304e7e36d3d3b.js"></script>
+    <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-7W1NVC64Q0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-7W1NVC64Q0");
+    </script>
+    <script
+      async="async"
+      data-cfasync="false"
+      src="//assignmentlonesome.com/cafd2caaa4caf4bed056bad8c3c9b3f4/invoke.js"
+    ></script>
+    <script type="text/javascript" src="//assignmentlonesome.com/50/dd/7a/50dd7a5378c4fdb893189336019ce6ed.js"></script>
+
+    <style>
+      body {
+        background-color: #181818;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+      }
+
+      #player {
+        width: 100%;
+        height: 100vh;
+        max-height: 80vh;
+        background-color: #000;
+        border-radius: 10px;
+        margin-top: 10px;
+        position: relative;
+      }
+
+      .scrolling-text {
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px 0;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+      }
+
+      .scrolling-text span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: scroll 20s linear infinite;
+      }
+
+      .scrolling-text a {
+        color: #1aa94b;
+        text-decoration: underline;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+      }
+
+      .ad-block {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+      }
+
+      .ad-block iframe {
+        border-radius: 8px;
+        border: none;
+      }
+
+      .whatsapp-button {
+        background-color: #1aa94b;
+        border-radius: 10px;
+        padding: 10px 30px;
+        font-weight: bolder;
+        width: 100%;
+        color: #fff;
+        display: inline-block;
+        font-size: 18px;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 0px;
+        transition: background-color 0.3s ease;
+      }
+
+      .whatsapp-button:hover {
+        background-color: #148f3d;
+      }
+
+      .hits-counter {
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Horizontal Ad -->
+      <div class="ad-block">
+        <script type="text/javascript">
+          atOptions = {
+            key: "b810e0fbe1febe7413cb9da5368f8cd9",
+            format: "iframe",
+            height: 60,
+            width: 468,
+            params: {},
+          };
+        </script>
+        <script
+          type="text/javascript"
+          src="//assignmentlonesome.com/b810e0fbe1febe7413cb9da5368f8cd9/invoke.js"
+        ></script>
+      </div>
+
+      <!-- Centered Ad -->
+      <div class="ad-block" style="max-width: 320px;">
+        <script type="text/javascript">
+          atOptions = {
+            key: "d00e07ac37e533bc34ba66baaf460173",
+            format: "iframe",
+            height: 50,
+            width: 320,
+            params: {},
+          };
+        </script>
+        <script
+          type="text/javascript"
+          src="//assignmentlonesome.com/d00e07ac37e533bc34ba66baaf460173/invoke.js"
+        ></script>
+      </div>
+    </div>
+
+    <div id="player"></div>
+
+    <div class="container">
+      <a
+        href="https://chat.whatsapp.com/GFzG1MzJkDyFYxwPejEQXc"
+        class="whatsapp-button"
+        >Join Live Links WhatsApp Group</a
+      >
+
+      <!-- Additional Ad Block -->
+      <div class="ad-block" style="max-width: 300px;">
+        <script type="text/javascript">
+          atOptions = {
+            key: "9a996594922fc8ef3b586b9a9d9c7294",
+            format: "iframe",
+            height: 250,
+            width: 300,
+            params: {},
+          };
+        </script>
+        <script
+          type="text/javascript"
+          src="//assignmentlonesome.com/9a996594922fc8ef3b586b9a9d9c7294/invoke.js"
+        ></script>
+      </div>
+      <div
+        id="container-cafd2caaa4caf4bed056bad8c3c9b3f4"
+        style="width: 100%; max-width: 100%;"
+      ></div>
+      <div class="hits-counter">
+        <a href="https://hits.sh/11s.in/" style="pointer-events: none;">
+          <img
+            alt="Hits"
+            src="https://hits.sh/11s.in.svg?view=today-total&label=HM%20Network&extraCount=150000&color=ff0000&labelColor=000000"
+          />
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function getParameterByName(name) {
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(window.location.href);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
+      var ConfiguracionCanales = {
+        DAS_ERSTE: {
+          url: "https://p7s1-live-001-prod.akamaized.net/28df258a/t_009/daserste-de-hd/cenc-default.mpd",
+          k1: "667f821486adfa6df62b53e41fe60c65",
+          k2: "be65cc2c378180153cbac97bc6ab8625",
         },
-      },
-      {
-        title: 'standard',
-        subtitle: 'Optimal choice for small teams',
-        price: 69,
-        period: 'Per Month',
-        items: [
-          {
-            description: 'Proin vel laoreet',
-          },
-          {
-            description: 'Ut efficitur habitasse egestas',
-          },
-          {
-            description: 'Volutpat hac curabitur',
-          },
-          {
-            description: 'Pellentesque blandit ut nibh',
-          },
-          {
-            description: 'Donec fringilla sem',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+        SPORT1_CZ: {
+          url: "https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cbcs.mpd",
+          k1: "11223344556677889900112233445566",
+          k2: "11223344556677889900112233445566",
         },
-        hasRibbon: true,
-        ribbonTitle: 'popular',
-      },
-      {
-        title: 'premium',
-        subtitle: 'Optimal choice for companies',
-        price: 199,
-        period: 'Per Month',
-        items: [
-          {
-            description: 'Curabitur suscipit risus',
-          },
-          {
-            description: 'Aliquam habitasse malesuada',
-          },
-          {
-            description: 'Suspendisse sit amet blandit',
-          },
-          {
-            description: 'Suspendisse auctor blandit dui',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
+        ZDF_DE: {
+          url: "https://p7s1-live-001-prod.akamaized.net/45371d5a/t_009/zdf-de-hd/cenc-default.mpd",
+          k1: "7757d3fa8cdab673a2dd9f3ed7b41360",
+          k2: "96e498b70eeecfc0164ed4e0a78e36f3",
         },
-      },
-    ]}
-  />
+      };
 
-  <!-- Features3 Widget ************** -->
+      var id = getParameterByName("id");
+      var config = ConfiguracionCanales[id];
 
-  <Features3
-    title="Price-related features"
-    subtitle="Discover the advantages of choosing our plans"
-    columns={2}
-    items={[
-      {
-        title: 'Tiered Pricing Plans',
-        description: 'Choose from a range of pricing plans designed to accommodate different budgets and requirements.',
-        icon: 'tabler:stairs',
-      },
-      {
-        title: 'Transparent Pricing',
-        description: 'Clearly displayed pricing details for each plan, with no hidden costs or unexpected charges.',
-        icon: 'tabler:flip-vertical',
-      },
-      {
-        title: 'Secure Payment Methods',
-        description: 'Secure payment gateways to protect your financial information during transactions.',
-        icon: 'tabler:shield-lock',
-      },
-      {
-        title: 'Instant Access',
-        description: `Immediate access to your chosen plan's features and templates upon subscription.`,
-        icon: 'tabler:accessible',
-      },
-      {
-        title: 'Upgrade Value',
-        description: 'Upgrade to higher-tier plans to unlock more features and benefits for an enhanced experience.',
-        icon: 'tabler:chevrons-up',
-      },
-      {
-        title: '24H support',
-        description: 'Questions answered via live chat, email or phone, every calendar day.',
-        icon: 'tabler:headset',
-      },
-    ]}
-    classes={{ container: 'max-w-5xl' }}
-  />
+      if (config) {
+        var sources = [];
 
-  <!-- Steps Widget ****************** -->
+        if (config.url.includes(".m3u8")) {
+          sources.push({
+            file: config.url,
+          });
+        }
 
-  <Steps
-    title="A guided journey from plans to creativity"
-    tagline="simplified process"
-    isReversed={true}
-    items={[
-      {
-        title: 'Explore plans',
-        icon: 'tabler:number-1',
-      },
-      {
-        title: 'Select a plan',
-        icon: 'tabler:number-2',
-      },
-      {
-        title: 'Sign Up / Log In',
-        icon: 'tabler:number-3',
-      },
-      {
-        title: 'Review order',
-        icon: 'tabler:number-4',
-      },
-      {
-        title: 'Enter payment details',
-        icon: 'tabler:number-5',
-      },
-      {
-        title: 'Confirmation',
-        icon: 'tabler:number-6',
-      },
-      {
-        title: 'Download and start using the template(s)',
-        icon: 'tabler:number-7',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
+        if (config.url.includes(".mpd") && config.k1 && config.k2) {
+          sources.push({
+            file: config.url,
+            drm: { clearkey: { keyId: config.k1, key: config.k2 } },
+          });
+        }
 
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Pricing FAQs"
-    subtitle="Choosing the right plan is important, and we're here to answer your questions. If you have queries about our pricing options, you're in the right place."
-    columns={1}
-    items={[
-      {
-        title: 'Do the plans come with customer support?',
-        description:
-          'Absolutely, all plans include access to our dedicated customer support to assist you with any queries or concerns.',
-      },
-      {
-        title: 'Is there a trial period for the different plans?',
-        description:
-          "Unfortunately, we don't offer trial periods for the plans. However, you can check out our demo section to preview the quality of our templates.",
-      },
-      {
-        title: 'Can I switch between plans?',
-        description:
-          'Certainly! You can easily upgrade or downgrade your plan, at any time, to find the one that best suits your evolving requirements.',
-      },
-      {
-        title: 'What payment methods do you accept?',
-        description:
-          'We accept major credit cards and online payment methods to ensure a convenient and secure transaction process.',
-      },
-      {
-        title: 'Are there any hidden fees beyond the displayed cost?',
-        description:
-          'No, the subscription cost covers all the features and templates listed under each plan. There are no hidden fees or extra charges.',
-      },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    title="Ready to boost your projects?"
-    subtitle="Join our community of satisfied customers who have transformed their work with our templates."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get started now',
-        href: '/',
-      },
-    ]}
-  />
-</Layout>
+        jwplayer("player").setup({
+          logo: {
+            file: "",
+            link: "",
+            position: "control-bar",
+          },
+          playlist: [
+            {
+              image: "",
+              sources: sources,
+            },
+          ],
+          autostart: false,
+          width: "100%",
+          height: "100",
+          stretching: "exactfit",
+          aspectratio: "16:9",
+          cast: {},
+          sharing: {},
+        });
+      }
+    </script>
+  </body>
+</html>
