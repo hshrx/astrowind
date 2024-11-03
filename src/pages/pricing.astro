@@ -1,7 +1,8 @@
 ---
 import { useEffect } from "astro/jsx-runtime";
+import Layout from '~/layouts/PageLayout.astro';
 ---
-
+<Layout metadata={metadata}>
 <html lang="en">
   <head>
     <link rel="stylesheet" href="styles.css" />
@@ -315,3 +316,4 @@ import { useEffect } from "astro/jsx-runtime";
     </script>
   </body>
 </html>
+</Layout>
