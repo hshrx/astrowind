@@ -1,327 +1,98 @@
 ---
-import { useEffect } from "astro/jsx-runtime";
 import Layout from '~/layouts/PageLayout.astro';
 
-// Define metadata with the properties you need
+// Define metadata for SEO and other settings
 const metadata = {
   title: '11s.in - Live Sports Pricing',
   description: 'Check out pricing plans on 11s.in for watching live sports.',
   keywords: 'live sports, pricing, sports streaming, 11s.in, watch sports online'
 };
 ---
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<Layout>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>{metadata.title}</title>
       <meta name="description" content={metadata.description} />
       <meta name="keywords" content={metadata.keywords} />
-    <title>11s.in - Live Sports</title>
+      <meta name="author" content="HM Network" />
+      
+      <!-- Open Graph Meta Tags for Social Media -->
+      <meta property="og:title" content="11s.in - Live Sports" />
+      <meta property="og:description" content="Watch live sports on 11s.in. Join our WhatsApp group for the latest updates and never miss a game!" />
+      <meta property="og:image" content="https://assets.k.om/news/uploads/2024/09/1.jpg" />
+      <meta property="og:url" content="https://11s.in" />
+      <meta property="og:type" content="website" />
 
-    <!-- Meta Tags for SEO -->
-    <meta
-      name="description"
-      content="Watch live sports on 11s.in. Join our WhatsApp group for the latest updates and never miss a game!"
-    />
-    <meta
-      name="keywords"
-      content="live sports, sports streaming, 11s.in, watch sports online, live sports updates"
-    />
-    <meta name="author" content="HM Network" />
+      <!-- Twitter Card Meta Tags -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="11s.in - Live Sports" />
+      <meta name="twitter:description" content="Watch live sports on 11s.in. Join our WhatsApp group for the latest updates and never miss a game!" />
+      <meta name="twitter:image" content="https://assets.khelnow.com/news/uploads/2024/09/1.jpg" />
 
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="11s.in - Live Sports" />
-    <meta
-      property="og:description"
-      content="Watch live sports on 11s.in. Join our WhatsApp group for the latest updates and never miss a game!"
-    />
-    <meta
-      property="og:image"
-      content="https://assets.k.om/news/uploads/2024/09/1.jpg"
-    />
-    <meta property="og:url" content="https://11s.in" />
-    <meta property="og:type" content="website" />
+      <!-- External Stylesheets and Scripts -->
+      <link rel="stylesheet" href="styles.css" />
+      <script type="text/javascript" src="//assignmentlonesome.com/4d/64/62/4d6462d4886122448a7304e7e36d3d3b.js"></script>
+      <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7W1NVC64Q0"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "G-7W1NVC64Q0");
+      </script>
+      <script async data-cfasync="false" src="//assignmentlonesome.com/cafd2caaa4caf4bed056bad8c3c9b3f4/invoke.js"></script>
+      <script type="text/javascript" src="//assignmentlonesome.com/50/dd/7a/50dd7a5378c4fdb893189336019ce6ed.js"></script>
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="11s.in - Live Sports" />
-    <meta
-      name="twitter:description"
-      content="Watch live sports on 11s.in. Join our WhatsApp group for the latest updates and never miss a game!"
-    />
-    <meta
-      name="twitter:image"
-      content="https://assets.khelnow.com/news/uploads/2024/09/1.jpg"
-    />
+      <style>
+        /* Inline styles go here */
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <!-- Horizontal Ad -->
+        <div class="ad-block">
+          <script type="text/javascript">
+            atOptions = { key: "b810e0fbe1febe7413cb9da5368f8cd9", format: "iframe", height: 60, width: 468, params: {} };
+          </script>
+          <script src="//assignmentlonesome.com/b810e0fbe1febe7413cb9da5368f8cd9/invoke.js"></script>
+        </div>
 
-    <!-- External Stylesheets and Scripts -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="text/javascript" src="//assignmentlonesome.com/4d/64/62/4d6462d4886122448a7304e7e36d3d3b.js"></script>
-    <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-7W1NVC64Q0"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-7W1NVC64Q0");
-    </script>
-    <script
-      async="async"
-      data-cfasync="false"
-      src="//assignmentlonesome.com/cafd2caaa4caf4bed056bad8c3c9b3f4/invoke.js"
-    ></script>
-    <script type="text/javascript" src="//assignmentlonesome.com/50/dd/7a/50dd7a5378c4fdb893189336019ce6ed.js"></script>
-
-    <style>
-      body {
-        background-color: #181818;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        color: #fff;
-      }
-
-      #player {
-        width: 100%;
-        height: 100vh;
-        max-height: 80vh;
-        background-color: #000;
-        border-radius: 10px;
-        margin-top: 10px;
-        position: relative;
-      }
-
-      .scrolling-text {
-        width: 100%;
-        background-color: #333;
-        color: #fff;
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-        padding: 10px 0;
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
-      }
-
-      .scrolling-text span {
-        display: inline-block;
-        padding-left: 100%;
-        animation: scroll 20s linear infinite;
-      }
-
-      .scrolling-text a {
-        color: #1aa94b;
-        text-decoration: underline;
-      }
-
-      @keyframes scroll {
-        0% {
-          transform: translateX(100%);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
-
-      .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 8px;
-      }
-
-      .ad-block {
-        width: 100%;
-        max-width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 10px;
-        margin-top: 10px;
-        border: none;
-      }
-
-      .ad-block iframe {
-        border-radius: 8px;
-        border: none;
-      }
-
-      .whatsapp-button {
-        background-color: #1aa94b;
-        border-radius: 10px;
-        padding: 10px 30px;
-        font-weight: bolder;
-        width: 100%;
-        color: #fff;
-        display: inline-block;
-        font-size: 18px;
-        text-align: center;
-        text-decoration: none;
-        margin-top: 0px;
-        transition: background-color 0.3s ease;
-      }
-
-      .whatsapp-button:hover {
-        background-color: #148f3d;
-      }
-
-      .hits-counter {
-        margin: 20px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <!-- Horizontal Ad -->
-      <div class="ad-block">
-        <script type="text/javascript">
-          atOptions = {
-            key: "b810e0fbe1febe7413cb9da5368f8cd9",
-            format: "iframe",
-            height: 60,
-            width: 468,
-            params: {},
-          };
-        </script>
-        <script
-          type="text/javascript"
-          src="//assignmentlonesome.com/b810e0fbe1febe7413cb9da5368f8cd9/invoke.js"
-        ></script>
+        <!-- Centered Ad -->
+        <div class="ad-block" style="max-width: 320px;">
+          <script type="text/javascript">
+            atOptions = { key: "d00e07ac37e533bc34ba66baaf460173", format: "iframe", height: 50, width: 320, params: {} };
+          </script>
+          <script src="//assignmentlonesome.com/d00e07ac37e533bc34ba66baaf460173/invoke.js"></script>
+        </div>
       </div>
 
-      <!-- Centered Ad -->
-      <div class="ad-block" style="max-width: 320px;">
-        <script type="text/javascript">
-          atOptions = {
-            key: "d00e07ac37e533bc34ba66baaf460173",
-            format: "iframe",
-            height: 50,
-            width: 320,
-            params: {},
-          };
-        </script>
-        <script
-          type="text/javascript"
-          src="//assignmentlonesome.com/d00e07ac37e533bc34ba66baaf460173/invoke.js"
-        ></script>
+      <div id="player"></div>
+
+      <div class="container">
+        <a href="https://chat.whatsapp.com/GFzG1MzJkDyFYxwPejEQXc" class="whatsapp-button">Join Live Links WhatsApp Group</a>
+
+        <!-- Additional Ad Block -->
+        <div class="ad-block" style="max-width: 300px;">
+          <script type="text/javascript">
+            atOptions = { key: "9a996594922fc8ef3b586b9a9d9c7294", format: "iframe", height: 250, width: 300, params: {} };
+          </script>
+          <script src="//assignmentlonesome.com/9a996594922fc8ef3b586b9a9d9c7294/invoke.js"></script>
+        </div>
+        <div id="container-cafd2caaa4caf4bed056bad8c3c9b3f4" style="width: 100%; max-width: 100%;"></div>
+        <div class="hits-counter">
+          <a href="https://hits.sh/11s.in/" style="pointer-events: none;">
+            <img alt="Hits" src="https://hits.sh/11s.in.svg?view=today-total&label=HM%20Network&extraCount=150000&color=ff0000&labelColor=000000" />
+          </a>
+        </div>
       </div>
-    </div>
 
-    <div id="player"></div>
-
-    <div class="container">
-      <a
-        href="https://chat.whatsapp.com/GFzG1MzJkDyFYxwPejEQXc"
-        class="whatsapp-button"
-        >Join Live Links WhatsApp Group</a
-      >
-
-      <!-- Additional Ad Block -->
-      <div class="ad-block" style="max-width: 300px;">
-        <script type="text/javascript">
-          atOptions = {
-            key: "9a996594922fc8ef3b586b9a9d9c7294",
-            format: "iframe",
-            height: 250,
-            width: 300,
-            params: {},
-          };
-        </script>
-        <script
-          type="text/javascript"
-          src="//assignmentlonesome.com/9a996594922fc8ef3b586b9a9d9c7294/invoke.js"
-        ></script>
-      </div>
-      <div
-        id="container-cafd2caaa4caf4bed056bad8c3c9b3f4"
-        style="width: 100%; max-width: 100%;"
-      ></div>
-      <div class="hits-counter">
-        <a href="https://hits.sh/11s.in/" style="pointer-events: none;">
-          <img
-            alt="Hits"
-            src="https://hits.sh/11s.in.svg?view=today-total&label=HM%20Network&extraCount=150000&color=ff0000&labelColor=000000"
-          />
-        </a>
-      </div>
-    </div>
-
-    <script>
-      function getParameterByName(name) {
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-          results = regex.exec(window.location.href);
-        if (!results) return null;
-        if (!results[2]) return "";
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-      }
-
-      var ConfiguracionCanales = {
-        DAS_ERSTE: {
-          url: "https://p7s1-live-001-prod.akamaized.net/28df258a/t_009/daserste-de-hd/cenc-default.mpd",
-          k1: "667f821486adfa6df62b53e41fe60c65",
-          k2: "be65cc2c378180153cbac97bc6ab8625",
-        },
-        SPORT1_CZ: {
-          url: "https://dash2.antik.sk/stream/nvidia_sport_1/playlist_cbcs.mpd",
-          k1: "11223344556677889900112233445566",
-          k2: "11223344556677889900112233445566",
-        },
-        ZDF_DE: {
-          url: "https://p7s1-live-001-prod.akamaized.net/45371d5a/t_009/zdf-de-hd/cenc-default.mpd",
-          k1: "7757d3fa8cdab673a2dd9f3ed7b41360",
-          k2: "96e498b70eeecfc0164ed4e0a78e36f3",
-        },
-      };
-
-      var id = getParameterByName("id");
-      var config = ConfiguracionCanales[id];
-
-      if (config) {
-        var sources = [];
-
-        if (config.url.includes(".m3u8")) {
-          sources.push({
-            file: config.url,
-          });
-        }
-
-        if (config.url.includes(".mpd") && config.k1 && config.k2) {
-          sources.push({
-            file: config.url,
-            drm: { clearkey: { keyId: config.k1, key: config.k2 } },
-          });
-        }
-
-        jwplayer("player").setup({
-          logo: {
-            file: "",
-            link: "",
-            position: "control-bar",
-          },
-          playlist: [
-            {
-              image: "",
-              sources: sources,
-            },
-          ],
-          autostart: false,
-          width: "100%",
-          height: "100",
-          stretching: "exactfit",
-          aspectratio: "16:9",
-          cast: {},
-          sharing: {},
-        });
-      }
-    </script>
-  </body>
-</html>
-
+      <script>
+        // Additional JavaScript for player setup
+      </script>
+    </body>
+  </html>
+</Layout>
